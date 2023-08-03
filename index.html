@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sarah's Weather App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/cb2e521b59.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <h1>
+        <form id="city-form">
+          <input
+            type="text"
+            placeholder="Enter a city name"
+            autocomplete="off"
+            class="city"
+            id="city-name"
+          />
+          <input
+            type="image"
+            src="images/magnifying-glass.png"
+            alt="search"
+            class="search"
+          />
+        </form>
+        <ul class="cities">
+          <li id="home">Current</li>
+          <li class="dubai">Dubai</li>
+          <li class="london">London</li>
+          <li class="san-francisco">New York</li>
+        </ul>
+      </h1>
+      <h2>
+        <i class="fa-solid fa-cloud-bolt storm"></i>
+      </h2>
+      <h3><span id="temp">0</span><span>°</span></h3>
+      <span class="celsius">C</span>
+      <span class="or">|</span>
+      <span class="fahrenheit">F</span>
+      <h4>in <span id="city">Sydney</span></h4>
+      <h5 id="day-date-time">Thu 6 Jul 2:58 pm</h5>
+      <h6 id="description">Thunderstorm</h6>
+      <div class="container other-info">
+        <div class="row details">
+          <i class="fa-solid fa-temperature-high min-max-image"></i>
+
+          <div class="col col-min-max">
+            <div class="row min-max-a">
+              <span id="min"> 15</span><span>°C -&nbsp</span
+              ><span id="max">25</span><span>°C</span>
+            </div>
+            <div class="row min-max-b">Min - Max</div>
+          </div>
+          <i class="fa-solid fa-thermometer feels-like-image"></i>
+          <div class="col col-feels-like">
+            <div class="row feels-like-a">
+              <span id="feels-like"> 22</span><span>°C</span>
+            </div>
+            <div class="row feels-like-b">Feels like</div>
+          </div>
+        </div>
+        <div class="row details">
+          <i class="fa-solid fa-wind wind-image"></i>
+          <div class="col col-wind">
+            <div class="row wind-a">
+              <span id="wind">3</span><span>&nbspkm/hr</span>
+            </div>
+            <div class="row wind-b">Wind</div>
+          </div>
+          <i class="fa-solid fa-droplet humidity-image"></i>
+          <div class="col col-humidity">
+            <div class="row humidity-a">
+              <span id="humidity"> 86</span><span>%</span>
+            </div>
+            <div class="row humidity-b">Humidity</div>
+          </div>
+        </div>
+      </div>
+
+      <table class="table table-borderless table-sm">
+        <tbody>
+          <tr>
+            <td class="other-days">Fri</td>
+            <td class="forecast">Rain</td>
+            <td class="temp">19°</td>
+          </tr>
+          <tr>
+            <td class="other-days">Sat</td>
+            <td class="forecast">Clouds</td>
+            <td class="temp">18°</td>
+          </tr>
+          <tr>
+            <td class="other-days">Sun</td>
+            <td class="forecast">Clouds</td>
+            <td class="temp">20°</td>
+          </tr>
+          <tr>
+            <td class="other-days">Mon</td>
+            <td class="forecast">Sun</td>
+            <td class="temp">19°</td>
+          </tr>
+          <tr>
+            <td class="other-days">Tue</td>
+            <td class="forecast">Sun</td>
+            <td class="temp">21°</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="sarah">
+        <a href="https://github.com/ijustmakethemupsee/weather-app"
+          >Open-source code</a
+        >
+        by Sarah de Doelder
+      </div>
+    </main>
+    <script src="src/app.js"></script>
+  </body>
+</html>
