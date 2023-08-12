@@ -18,8 +18,6 @@ function displayWeatherCondition(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
 
-  console.log(response);
-
   if (response.data.weather[0].main === "Clouds") {
     iconElement.setAttribute("class", "fa-solid fa-cloud");
   }
@@ -45,6 +43,10 @@ function displayWeatherCondition(response) {
 
   if (response.data.weather[0].main === "Thunderstorm") {
     iconElement.setAttribute("class", "fa-solid fa-cloud-bolt");
+  }
+
+  if (response.data.weather[0].main === "Snow") {
+    iconElement.setAttribute("class", "fa-solid fa-snowflake");
   }
 }
 
