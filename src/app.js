@@ -1,27 +1,51 @@
 function displayWeatherCondition(response) {
-  document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temp").innerHTML = Math.round(
-    response.data.main.temp
-  );
-  document.querySelector("#description").innerHTML =
-    response.data.weather[0].main;
+  let cityElement = document.querySelector("#city");
+  let tempElement = document.querySelector("#temp");
+  let descriptionElement = document.querySelector("#description");
+  let minElement = document.querySelector("#min");
+  let maxElement = document.querySelector("#max");
+  let feelslikeElement = document.querySelector("#feels-like");
+  let windElement = document.querySelector("#wind");
+  let humidityElement = document.querySelector("#humidity");
+  let iconElement = document.querySelector("#icon");
 
-  document.querySelector("#min").innerHTML = Math.round(
-    response.data.main.temp_min
-  );
-  document.querySelector("#max").innerHTML = Math.round(
-    response.data.main.temp_max
-  );
+  cityElement.innerHTML = response.data.name;
+  tempElement.innerHTML = Math.round(response.data.main.temp);
+  descriptionElement.innerHTML = response.data.weather[0].main;
+  minElement.innerHTML = Math.round(response.data.main.temp_min);
+  maxElement.innerHTML = Math.round(response.data.main.temp_max);
+  feelslikeElement.innerHTML = Math.round(response.data.main.feels_like);
+  windElement.innerHTML = Math.round(response.data.wind.speed);
+  humidityElement.innerHTML = Math.round(response.data.main.humidity);
 
-  document.querySelector("#feels-like").innerHTML = Math.round(
-    response.data.main.feels_like
-  );
-  document.querySelector("#wind").innerHTML = Math.round(
-    response.data.wind.speed
-  );
-  document.querySelector("#humidity").innerHTML = Math.round(
-    response.data.main.humidity
-  );
+  console.log(response);
+
+  if (response.data.weather[0].main === "Clouds") {
+    iconElement.setAttribute("class", "fa-solid fa-cloud");
+  }
+
+  if (response.data.weather[0].main === "Clear") {
+    iconElement.setAttribute("class", "fa-solid fa-sun");
+  }
+
+  if (response.data.weather[0].main === "Drizzle") {
+    iconElement.setAttribute("class", "fa-solid fa-cloud-rain");
+  }
+
+  if (
+    response.data.weather[0].main === "Mist" ||
+    response.data.weather[0].main === "Fog"
+  ) {
+    iconElement.setAttribute("class", "fa-solid fa-smog");
+  }
+
+  if (response.data.weather[0].main === "Rain") {
+    iconElement.setAttribute("class", "fa-solid fa-cloud-showers-heavy");
+  }
+
+  if (response.data.weather[0].main === "Thunderstorm") {
+    iconElement.setAttribute("class", "fa-solid fa-cloud-bolt");
+  }
 }
 
 function searchCity(cityName) {
