@@ -35,17 +35,20 @@
         </form>
         <ul class="cities">
           <li id="home">Current</li>
-          <li class="dubai">Dubai</li>
-          <li class="london">London</li>
-          <li class="san-francisco">San Francisco</li>
+          <li id="dubai">Dubai</li>
+          <li id="london">London</li>
+          <li id="san-francisco">San Francisco</li>
         </ul>
       </h1>
       <h2><i class="fa-solid fa-cloud-sun" id="icon"></i></h2>
       <h3><span id="temp">0</span><span>°</span></h3>
-      <span class="celsius">C</span>
-      <span class="or">|</span>
-      <span class="fahrenheit">F</span>
-      <h4>in <span id="city">Sydney</span></h4>
+      <span class="active" id="celsius">C</span>
+      <span id="or">|</span>
+      <span class="active" id="fahrenheit">F</span>
+      <h4>
+        in
+        <span id="city">Sydney</span>
+      </h4>
       <h5 id="day-date-time">Sat 12 Aug 22:39</h5>
       <h6 id="description">Clouds</h6>
       <div class="container other-info">
@@ -54,10 +57,10 @@
 
           <div class="col col-min-max">
             <div class="row min-max-a">
-              <span id="min"> 15</span><span>°C -&nbsp</span
+              <span id="min"> 15</span><span>°C &&nbsp</span
               ><span id="max">25</span><span>°C</span>
             </div>
-            <div class="row min-max-b">Min - Max</div>
+            <div class="row min-max-b">Min & Max</div>
           </div>
           <i class="fa-solid fa-thermometer feels-like-image"></i>
           <div class="col col-feels-like">

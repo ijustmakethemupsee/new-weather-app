@@ -10,7 +10,15 @@ function displayWeatherCondition(response) {
   let iconElement = document.querySelector("#icon");
 
   cityElement.innerHTML = response.data.name;
-  tempElement.innerHTML = Math.round(response.data.main.temp);
+
+  celsiusTemp = response.data.main.temp;
+
+  tempElement.innerHTML = Math.round(celsiusTemp);
+
+  if (Math.round(celsiusTemp) < 10 && Math.round(celsiusTemp) > 0) {
+    tempElement.innerHTML = `0${Math.round(celsiusTemp)}`;
+  }
+
   descriptionElement.innerHTML = response.data.weather[0].main;
   minElement.innerHTML = Math.round(response.data.main.temp_min);
   maxElement.innerHTML = Math.round(response.data.main.temp_max);
@@ -50,6 +58,27 @@ function displayWeatherCondition(response) {
   }
 }
 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+
+  let tempElement = document.querySelector("#temp");
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  tempElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+
+  fahrenheitLink.classList.add("active");
+  celsiusLink.classList.remove("active");
+
+  let tempElement = document.querySelector("#temp");
+  tempElement.innerHTML = Math.round(celsiusTemp);
+}
+
 function searchCity(cityName) {
   let apiKey = "b40b135798f82a05aed08769f9275f50";
   let units = "metric";
@@ -63,6 +92,14 @@ function handleSubmit(event) {
   let cityName = document.querySelector("#city-name").value;
   searchCity(cityName);
 }
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit");
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector("#celsius");
+celsiusLink.addEventListener("click", displayCelsiusTemp);
 
 let searchCityName = document.querySelector("#city-form");
 
@@ -83,6 +120,39 @@ function getHomeLocation(event) {
 
 let homeCity = document.querySelector("#home");
 homeCity.addEventListener("click", getHomeLocation);
+
+function getDubaiLocation(position) {
+  let apiKey = "b40b135798f82a05aed08769f9275f50";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=25.2582&lon=55.3047&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+let dubaiCity = document.querySelector("#dubai");
+dubaiCity.addEventListener("click", getDubaiLocation);
+
+function getLondonLocation(position) {
+  let apiKey = "b40b135798f82a05aed08769f9275f50";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=51.5085&lon=-0.1257&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+let londonCity = document.querySelector("#london");
+londonCity.addEventListener("click", getLondonLocation);
+
+function getSanFranciscoLocation(position) {
+  let apiKey = "b40b135798f82a05aed08769f9275f50";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=37.7749&lon=-122.4194&appid=${apiKey}&units=${units}`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+let sanFranciscoCity = document.querySelector("#san-francisco");
+sanFranciscoCity.addEventListener("click", getSanFranciscoLocation);
 
 function completeDate() {
   let now = new Date();

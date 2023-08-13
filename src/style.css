@@ -81,35 +81,34 @@ h3 {
   top: 123px;
 }
 
-.celsius {
-  color: #d8c9d6;
+#celsius {
+  font-size: 15px;
   position: absolute;
   left: 190px;
   top: 127px;
-  transition: all 200ms ease-in-out;
 }
 
-.celsius:hover {
-  color: #6a6369;
-  cursor: pointer;
-}
-
-.or {
+#or {
   color: #aaa0a9;
+  font-size: 14px;
   position: absolute;
   left: 203px;
   top: 126px;
 }
 
-.fahrenheit {
-  color: #d8c9d6;
+#fahrenheit {
+  font-size: 15px;
   position: absolute;
   left: 209px;
   top: 127px;
-  transition: all 200ms ease-in-out;
 }
 
-.fahrenheit:hover {
+.active {
+  color: #d8c9d6;
+  cursor: pointer;
+}
+
+.active:hover {
   color: #6a6369;
   cursor: pointer;
 }
