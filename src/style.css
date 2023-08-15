@@ -67,7 +67,7 @@ li:hover {
 h2 {
   display: inline;
   color: #a27c9a;
-  font-size: 35px;
+  font-size: 30px;
   margin-left: 35px;
   transition: all 200ms ease-in-out;
 }
@@ -75,7 +75,7 @@ h2 {
 h3 {
   display: inline;
   color: #6a6369;
-  font-size: 35px;
+  font-size: 30px;
   position: absolute;
   left: 130px;
   top: 123px;
@@ -84,7 +84,7 @@ h3 {
 #celsius {
   font-size: 15px;
   position: absolute;
-  left: 190px;
+  left: 181px;
   top: 127px;
 }
 
@@ -92,14 +92,14 @@ h3 {
   color: #aaa0a9;
   font-size: 14px;
   position: absolute;
-  left: 203px;
+  left: 193px;
   top: 126px;
 }
 
 #fahrenheit {
   font-size: 15px;
   position: absolute;
-  left: 209px;
+  left: 198px;
   top: 127px;
 }
 
@@ -116,9 +116,9 @@ h3 {
 h4 {
   display: inline;
   color: #6a6369;
-  font-size: 35px;
+  font-size: 30px;
   position: absolute;
-  left: 226px;
+  left: 213px;
   top: 123px;
 }
 
@@ -134,47 +134,39 @@ h6 {
   color: #aaa0a9;
   font-size: 15px;
   line-height: 10px;
+  margin-bottom: 30px;
   margin-left: 90px;
 }
 
-.details {
-  padding: 5px;
+.details-column {
+  text-align: left;
+  padding: 8px;
 }
 
-.other-info {
-  display: block;
+.row-for-two {
   color: #aaa0a9;
   font-size: 15px;
   line-height: 20px;
-  margin: 30px 5px 25px 100px;
+  margin-left: 0;
   padding: 0;
+  text-align: left;
 }
-
-.min-max-image {
-  color: #a27c9a;
-  font-size: 35px;
-  margin-left: 4px;
-  margin-right: 13px;
-}
-.feels-like-image {
-  color: #a27c9a;
-  font-size: 35px;
-  margin-left: 0px;
-  margin-right: 13px;
-}
-
+.min-max-image,
+.feels-like-image,
 .wind-image {
   color: #a27c9a;
   font-size: 35px;
-  margin-left: 4px;
-  margin-right: 13px;
+  margin-left: 80px;
+  padding: 0;
+  text-align: left;
 }
 
 .humidity-image {
   color: #a27c9a;
   font-size: 35px;
-  margin-left: 6px;
-  margin-right: 16px;
+  margin-left: 76px;
+  padding: 0;
+  text-align: left;
 }
 
 .min-max-a,
@@ -183,6 +175,16 @@ h6 {
 .humidity-a {
   font-weight: bold;
   color: #6a6369;
+  margin-left: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.min-max-b,
+.feels-like-b,
+.wind-b,
+.humidity-b {
+  margin-left: 0px;
 }
 
 a:link {
@@ -197,5 +199,4 @@ a:visited {
   color: #aaa0a9;
   font-size: 10px;
   margin-left: 440px;
-  margin-top: 8px;
 }

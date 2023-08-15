@@ -121,34 +121,25 @@ function getHomeLocation(event) {
 let homeCity = document.querySelector("#home");
 homeCity.addEventListener("click", getHomeLocation);
 
-function getDubaiLocation(position) {
-  let apiKey = "b40b135798f82a05aed08769f9275f50";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=25.2582&lon=55.3047&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(displayWeatherCondition);
+function getDubaiLocation(event) {
+  event.preventDefault();
+  searchCity("Dubai");
 }
 
 let dubaiCity = document.querySelector("#dubai");
 dubaiCity.addEventListener("click", getDubaiLocation);
 
-function getLondonLocation(position) {
-  let apiKey = "b40b135798f82a05aed08769f9275f50";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=51.5085&lon=-0.1257&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(displayWeatherCondition);
+function getLondonLocation(event) {
+  event.preventDefault();
+  searchCity("London");
 }
 
 let londonCity = document.querySelector("#london");
 londonCity.addEventListener("click", getLondonLocation);
 
-function getSanFranciscoLocation(position) {
-  let apiKey = "b40b135798f82a05aed08769f9275f50";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=37.7749&lon=-122.4194&appid=${apiKey}&units=${units}`;
-
-  axios.get(apiUrl).then(displayWeatherCondition);
+function getSanFranciscoLocation(event) {
+  event.preventDefault();
+  searchCity("San Francisco");
 }
 
 let sanFranciscoCity = document.querySelector("#san-francisco");
