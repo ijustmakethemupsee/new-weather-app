@@ -1,12 +1,14 @@
 main {
   border: 1px solid #a27c9a;
   border-radius: 10px;
-  width: 620px;
+  color: #6a6369;
+  width: 612px;
   margin: 40px 0 0 40px;
+  padding: 0;
 }
 
 h1 {
-  margin: 10px 0 20px 30px;
+  margin: 10px 0 37px 30px;
 }
 
 form {
@@ -14,7 +16,7 @@ form {
 }
 
 .city {
-  background: rgb(248, 248, 240);
+  background: #f3e9f3;
   border: 1px solid #a27c9a;
   border-radius: 10px;
   color: #aaa0a9;
@@ -27,17 +29,23 @@ form {
 }
 
 .search {
-  height: 25px;
+  color: #aaa0a9;
   position: relative;
-  top: 7px;
+  left: -12px;
+  top: 5px;
   transition: all 200ms ease-in-out;
-  width: 25px;
 }
 
-button {
-  background-color: transparent;
-  border: 0;
-  padding: 0;
+.search:focus {
+  color: #a27c9a;
+  box-shadow: none;
+  outline: none;
+}
+
+.search:hover {
+  color: #a27c9a;
+  cursor: pointer;
+  text-decoration: none;
 }
 
 #city-name {
@@ -47,6 +55,7 @@ button {
 .cities {
   list-style: none;
   display: inline;
+  padding-left: 3px;
 }
 
 li {
@@ -54,13 +63,13 @@ li {
   display: inline;
   font-size: 15px;
   line-height: 30px;
-  margin-right: 10px;
-  padding-left: 5px;
+
+  margin-right: 20px;
   transition: all 200ms ease-in-out;
 }
 
 li:hover {
-  color: #6a6369;
+  color: #a27c9a;
   cursor: pointer;
 }
 
@@ -78,14 +87,15 @@ h3 {
   font-size: 30px;
   position: absolute;
   left: 130px;
-  top: 123px;
+  top: 140px;
 }
 
 #celsius {
   font-size: 15px;
+  font-weight: bold;
   position: absolute;
   left: 181px;
-  top: 127px;
+  top: 140px;
 }
 
 #or {
@@ -93,14 +103,15 @@ h3 {
   font-size: 14px;
   position: absolute;
   left: 193px;
-  top: 126px;
+  top: 139px;
 }
 
 #fahrenheit {
   font-size: 15px;
+  font-weight: bold;
   position: absolute;
   left: 198px;
-  top: 127px;
+  top: 140px;
 }
 
 .active {
@@ -109,7 +120,7 @@ h3 {
 }
 
 .active:hover {
-  color: #6a6369;
+  color: #a27c9a;
   cursor: pointer;
 }
 
@@ -118,8 +129,8 @@ h4 {
   color: #6a6369;
   font-size: 30px;
   position: absolute;
-  left: 213px;
-  top: 123px;
+  left: 214px;
+  top: 140px;
 }
 
 h5 {
@@ -131,60 +142,101 @@ h5 {
 }
 
 h6 {
-  color: #aaa0a9;
+  color: #a27c9a;
   font-size: 15px;
   line-height: 10px;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
   margin-left: 90px;
 }
 
+.details-row {
+  margin: 0;
+  padding: 0;
+}
+
 .details-column {
-  text-align: left;
-  padding: 8px;
+  margin: 0;
+  padding: 0;
 }
 
 .row-for-two {
   color: #aaa0a9;
   font-size: 15px;
   line-height: 20px;
-  margin-left: 0;
+  margin-bottom: 8px;
+  margin-left: 12px;
+  margin-right: 0;
   padding: 0;
   text-align: left;
 }
 .min-max-image,
 .feels-like-image,
 .wind-image {
-  color: #a27c9a;
+  color: #aaa0a9;
   font-size: 35px;
-  margin-left: 80px;
+  margin-left: 24px;
   padding: 0;
   text-align: left;
 }
 
 .humidity-image {
-  color: #a27c9a;
+  color: #aaa0a9;
   font-size: 35px;
-  margin-left: 76px;
+  margin-left: 22px;
   padding: 0;
   text-align: left;
 }
 
 .min-max-a,
 .feels-like-a,
-.wind-a,
+.wind-a {
+  font-weight: bold;
+  color: #6a6369;
+  margin-left: 5px;
+  padding: 0;
+  text-align: left;
+}
+
 .humidity-a {
   font-weight: bold;
   color: #6a6369;
-  margin-left: 0;
+  margin-left: 4px;
   padding: 0;
   text-align: left;
 }
 
 .min-max-b,
 .feels-like-b,
-.wind-b,
+.wind-b {
+  margin-left: 5px;
+}
+
 .humidity-b {
-  margin-left: 0px;
+  margin-left: 4px;
+}
+
+.forecast-row {
+  margin-left: 43px;
+  margin-right: 10px;
+}
+
+.forecast-column {
+  color: #aaa0a9;
+  font-size: 15px;
+  line-height: 27px;
+  text-align: center;
+}
+
+.forecast-day {
+  text-align: left;
+}
+
+.forecast-image {
+  color: #a27c9a;
+}
+
+.forecast-temperature {
+  text-align: right;
 }
 
 a:link {
@@ -195,8 +247,14 @@ a:visited {
   color: #6a6369;
 }
 
+a:hover {
+  color: #a27c9a;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 #sarah {
   color: #aaa0a9;
   font-size: 10px;
-  margin-left: 440px;
+  margin-left: 410px;
 }
