@@ -17,7 +17,7 @@
   </head>
   <body>
     <main>
-      <h1>
+      <h1 id="enter-city-name">
         <form id="city-form">
           <input
             type="text"
@@ -27,27 +27,31 @@
             id="city-name"
           />
           <button type="submit" class="btn search">
-            <i class="fa-solid fa-magnifying-glass fa-xl"></i>
+            <i class="fa-solid fa-magnifying-glass fa-lg"></i>
           </button>
         </form>
         <ul class="cities">
-          <li id="home">Current</li>
-          <li id="dubai">Dubai</li>
-          <li id="london">London</li>
-          <li id="san-francisco">San Francisco</li>
+          <li class="city-link-list" id="home">Current</li>
+          <li class="city-link-list" id="dubai">Dubai</li>
+          <li class="city-link-list" id="london">London</li>
+          <li class="city-link-list" id="san-francisco">San Francisco</li>
         </ul>
       </h1>
-      <h2><i class="fa-solid fa-cloud-sun" id="icon"></i></h2>
-      <h3><span id="temp">0</span><span>°</span></h3>
-      <span id="celsius">C</span>
-      <span id="or">|</span>
-      <span class="active" id="fahrenheit">F</span>
-      <h4>
-        in
-        <span id="city">Sydney</span>
-      </h4>
-      <h5 id="day-date-time">Sat 12 Aug 22:39</h5>
-      <h6 id="description">Clouds</h6>
+      <div id="background-banner">
+        <h2 id="today-weather-icon">
+          <i class="fa-solid fa-cloud-sun" id="icon"></i>
+        </h2>
+        <h3 id="temp-in-c-and-f"><span id="temp">0</span><span>°</span></h3>
+        <span id="celsius">C</span>
+        <span id="or">|</span>
+        <span class="active" id="fahrenheit">F</span>
+        <h4 id="location">
+          in
+          <span id="city">Sydney</span>
+        </h4>
+        <h5 id="day-date-time">Sat 12 Aug 22:39</h5>
+        <h6 id="description">Clouds</h6>
+      </div>
 
       <div class="row details-row">
         <div class="col-5 details-column">
@@ -100,13 +104,14 @@
 
       <br />
     </main>
-    <div id="sarah">
+    <div id="creator">
       <a
         href="https://github.com/ijustmakethemupsee/new-weather-app"
         target="_blank"
+        class="open-source-code"
         >Open-source code</a
       >
-      by Sarah de Doelder <i class="fa-solid fa-paw"></i>
+      by Sarah de Doelder <i class="fa-solid fa-paw" id="sarah"></i>
     </div>
     <script src="src/app.js"></script>
   </body>
