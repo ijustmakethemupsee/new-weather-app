@@ -33,38 +33,30 @@ function displayWeatherCondition(response) {
   windElement.innerHTML = Math.round(response.data.wind.speed);
   humidityElement.innerHTML = Math.round(response.data.main.humidity);
 
-  if (response.data.weather[0].main === "Clouds") {
-    iconElement.setAttribute("class", "fa-solid fa-cloud");
-  }
-
-  if (response.data.weather[0].main === "Clear") {
-    iconElement.setAttribute("class", "fa-solid fa-sun");
-  }
-
-  if (response.data.weather[0].main === "Drizzle") {
-    iconElement.setAttribute("class", "fa-solid fa-cloud-rain");
-  }
-
-  if (
-    response.data.weather[0].main === "Mist" ||
-    response.data.weather[0].main === "Fog"
-  ) {
-    iconElement.setAttribute("class", "fa-solid fa-smog");
-  }
-
-  if (response.data.weather[0].main === "Rain") {
-    iconElement.setAttribute("class", "fa-solid fa-cloud-showers-heavy");
-  }
-
-  if (response.data.weather[0].main === "Thunderstorm") {
-    iconElement.setAttribute("class", "fa-solid fa-cloud-bolt");
-  }
-
-  if (response.data.weather[0].main === "Snow") {
-    iconElement.setAttribute("class", "fa-solid fa-snowflake");
-  }
+  iconElement.setAttribute(
+    "class",
+    mapWeatherConditionToIcon(response.data.weather[0].main)
+  );
 
   getForecast(response.data.coord);
+}
+
+function mapWeatherConditionToIcon(condition) {
+  if (condition === "Clouds") {
+    return "fa-solid fa-cloud";
+  } else if (condition === "Clear") {
+    return "fa-solid fa-sun";
+  } else if (condition === "Drizzle") {
+    return "fa-solid fa-cloud-rain";
+  } else if (condition === "Mist" || condition === "Fog") {
+    return "fa-solid fa-smog";
+  } else if (condition === "Rain") {
+    return "fa-solid fa-cloud-showers-heavy";
+  } else if (condition === "Thunderstorm") {
+    return "fa-solid fa-cloud-bolt";
+  } else if (condition === "Snow") {
+    return "fa-solid fa-snowflake";
+  }
 }
 
 function displayFahrenheitTemp(event) {
@@ -216,7 +208,9 @@ function displayForecast(response) {
  <div class="row forecast-row">
   <div class="col-3 forecast-day">${formatDay(forecastDay.dt)}</div>
   <div class="col-1 forecast-icon">
-  <i class="fa-solid fa-cloud-rain" id="forecast-image"></i></div>
+  <i class="${mapWeatherConditionToIcon(
+    forecastDay.weather[0].main
+  )}" id="forecast-image"></i></div>
   <div class="col-4" id="forecast-description">
   ${forecastDay.weather[0].main} </div>
 <div class="col-2 forecast-temp">

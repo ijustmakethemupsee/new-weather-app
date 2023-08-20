@@ -80,7 +80,7 @@ li.city-link-list:hover {
   display: inline;
   color: #a27c9a;
   font-size: 30px;
-  margin-left: 35px;
+  margin-left: 36px;
   transition: all 200ms ease-in-out;
 }
 
@@ -239,6 +239,7 @@ li.city-link-list:hover {
 
 #forecast-image {
   color: #a27c9a;
+  text-align: center;
 }
 
 #forecast-description {
