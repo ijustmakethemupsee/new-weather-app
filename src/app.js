@@ -195,31 +195,30 @@ function formatDay(timestamp) {
 
 function displayForecast(response) {
   let forecast = response.data.daily;
-
   let forecastElement = document.querySelector("#forecast");
-
-  let forecastHTML = " ";
-
+  let forecastHTML = "";
+  let today = new Date().getDay(); // Gets today's day index (0 for Sun, 1 for Mon, etc.)
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  // Adjust the days array to start from tomorrow
+  let adjustedDays = days.slice(today + 1).concat(days.slice(0, today + 1));
   forecast.forEach(function (forecastDay, index) {
     if (index < 7) {
-      forecastHTML =
-        forecastHTML +
-        `
- <div class="row forecast-row">
-  <div class="col-3 forecast-day">${formatDay(forecastDay.dt)}</div>
-  <div class="col-1 forecast-icon">
-  <i class="${mapWeatherConditionToIcon(
-    forecastDay.weather[0].main
-  )}" id="forecast-image"></i></div>
-  <div class="col-4" id="forecast-description">
-  ${forecastDay.weather[0].main} </div>
-<div class="col-2 forecast-temp">
-${Math.round(forecastDay.temp.day)}°C</div>
-</div>
-`;
+      // Ensure we're only adding the next 7 days
+      forecastHTML += `
+        <div class="row forecast-row">
+          <div class="col-2 forecast-day">${adjustedDays[index]}</div>
+          <div class="col-3 forecast-icon">
+            <i class="fa-solid fa-cloud-rain" id="forecast-image"></i>
+          </div>
+          <div class="col-4" id="forecast-description">
+            ${forecastDay.weather[0].main}
+          </div>
+          <div class="col-3 forecast-temp">
+            ${Math.round(forecastDay.temp.day)}°C
+          </div>
+        </div>`;
     }
   });
-
   forecastElement.innerHTML = forecastHTML;
 }
 
